@@ -7,7 +7,6 @@ void		give_sorted_grid(int *grid, size_t n)
 {
 	size_t	i;
 
-	//printf("grid size = %zu\n", n);
 	i = 0;
 	while (i < n)
 	{
@@ -23,16 +22,12 @@ void		give_sorted_grid_star(int *grid, size_t n)
 {
 	size_t	i;
 
-	//printf("grid size = %zu\n", n);
 	i = 0;
 	while (i < n)
 	{
 		grid[i] = i + 1;
 		i++;
 	}
-	srand(time(NULL));
-	//grid[i] = rand() % 49;
-
 }
 
 void		print_grid(int *grid, size_t n)
