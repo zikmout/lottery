@@ -94,6 +94,7 @@ int			main(int ac, char *av[])
 			print_paper(grid, grid_star, 10, 10);
 		}
 		free(grid);
+		free(grid_star);
 		return (1);
 	}
 	else
