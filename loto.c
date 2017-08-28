@@ -44,6 +44,12 @@ void	print_grid_star(int *grid, size_t n)
 	printf("----------------------------------------\n");
 }
 
+void	print_paper(int *grid, int *grid_star, size_t grid_size, size_t grid_star_size)
+{
+	print_grid(grid, grid_size);
+	print_grid_star(grid_star, grid_star_size);
+}
+
 int main(int ac, char *av[])
 {
 	int *grid;
@@ -66,9 +72,10 @@ int main(int ac, char *av[])
 			give_sorted_grid(grid, 49);
 			give_sorted_grid(grid_star, 10);
 			//generate_rand_array(grid, (size_t)atoi(av[1]));
-			write(1, "-->debug\n", 9);
-			print_grid(grid, 10);
-			print_grid_star(grid, 10);
+			write(1, "-->debug grid before\n", 22);
+			print_paper(grid, grid_star, 10, 10);
+			write(1, "\n\n-->debug grid after\n", 22);
+			print_paper(grid, grid_star, 10, 10);
 		}
 		free(grid);
 		return (1);
