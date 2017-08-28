@@ -15,7 +15,23 @@ void		give_sorted_grid(int *grid, size_t n)
 		i++;
 	}
 	srand(time(NULL));
-	grid[i] = rand() % 49;
+	grid[i] = rand() % 50;
+
+}
+
+void		give_sorted_grid_star(int *grid, size_t n)
+{
+	size_t	i;
+
+	//printf("grid size = %zu\n", n);
+	i = 0;
+	while (i < n)
+	{
+		grid[i] = i + 1;
+		i++;
+	}
+	srand(time(NULL));
+	//grid[i] = rand() % 49;
 
 }
 
@@ -85,7 +101,7 @@ int			main(int ac, char *av[])
 		else
 		{
 			give_sorted_grid(grid, 49);
-			give_sorted_grid(grid_star, 10);
+			give_sorted_grid_star(grid_star, 10);
 			//write(1, "-->debug grid before\n", 22);
 			//print_paper(grid, grid_star, 10, 10);
 			shuffle_grid(grid, 49);
