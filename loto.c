@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <time.h>
+#include "libft.h"
 
 void		give_sorted_grid(int *grid, size_t n)
 {
@@ -78,9 +79,14 @@ void		shuffle_grid(int *grid, size_t size)
 
 int			main(int ac, char *av[])
 {
+	int		fd;
 	int		*grid;
 	int		*grid_star;
+	char	*line;
+	char	**split = NULL;
+	int		first;
 
+	first = 1;
 	if (ac == 1)
 	{
 		if (!(grid = (int *)malloc(sizeof(int) * 5 * 49)))
@@ -95,6 +101,25 @@ int			main(int ac, char *av[])
 		}
 		else
 		{
+			/*
+			printf("This is it\n\n\n");
+			fd = open("historic_loto/nouveau_loto.csv", O_RDONLY);
+			while (get_next_line(fd, &line) > 0)
+			{
+				if (first)
+					first = 0;
+				else {
+					//printf("line -> %s\n", line);
+					split = ft_strsplit((char const *)line, ';');
+					printf("line -> %d\n", ft_atoi(split[4]));
+					printf("line -> %d\n", ft_atoi(split[5]));
+					printf("line -> %d\n", ft_atoi(split[6]));
+					printf("line -> %d\n", ft_atoi(split[7]));
+					printf("line -> %d\n", ft_atoi(split[8]));
+					printf("line -> %d\n", ft_atoi(split[9]));
+				}
+			}
+			*/
 			give_sorted_grid(grid, 49);
 			give_sorted_grid_star(grid_star, 10);
 			//write(1, "-->debug grid before\n", 22);
